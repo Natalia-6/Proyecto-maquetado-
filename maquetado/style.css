@@ -1,0 +1,167 @@
+html {
+	height: 100%;
+
+}
+body {
+	background-color: #999999;
+	min-height: 100%;
+	min-width: 100%
+}
+.grid-container{
+	display: grid;
+	/*grid-template-rows: 10% 25% 65% 25%;
+	grid-template-columns: 70% 30%;
+	grid-template-areas: 
+	"nav-area nav-area"
+	"header-area header-area"
+	"section-area aside-area"
+	"footer-area footer-area";*/
+
+  grid-template:
+    "nav-area nav-area" 6rem
+	"header-area header-area" 25rem
+	"section-area aside-area" auto
+	"footer-area footer-area" 10rem/
+	   70%           30%; 
+	}
+	.grid-galley{
+	display:grid;
+	grid-template-columns: repeat(2,auto);
+	grid-template-rows: auto auto;
+	overflow: cover;
+	justify-content: space-around;
+}
+
+section h1{
+	grid-column-start: 1;
+	grid-column-end: 3;
+} 
+
+ nav {
+ 	font-family: 'Josefin Sans', sans-serif;
+ 	font-size: 24px;
+	background-color: #D35715;
+	grid-area: nav-area;
+	text-align: center; 
+}
+header{
+	max-width:100%;
+	height:auto;
+	background-color:#D1B218;
+	grid-area: header-area;
+}
+img{background-color: #FFF933
+}
+section{
+	font-size: 18px; 
+	text-align: center; 
+	background-color: #6488C2;
+	grid-area: section-area;
+}
+
+aside{
+	text-align: center; 
+	background-color: #12A3AA;
+	grid-area: aside-area;
+}
+footer{
+	text-align: center; 
+	background-color: #5D4B8B;
+	grid-area: footer-area;
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}
+.img1{
+	
+
+}
+
+.img2{
+
+  grid-column: 2;
+  grid-column-end: 3;
+  
+
+}
+
+.img3{
+	
+	grid-column-start: 2;
+	grid-column-end: 2;
+
+
+ }
+ .img4{
+ 	grid-column-start: 2;
+ 	grid-column-end: 3;
+ }
+
+
+ /*****
+      cambios para tablet
+  *****/
+ @media (max-width: 768px){ 
+ 	.grid-container{ 
+		grid-template:
+		"header-area 	header-area" 25rem
+		 "nav-area		nav-area" 8rem
+		 "aside-area	   aside-area" 12rem
+		"section-area    section-area"35rem 
+		"footer-area 	footer-area" 15rem/
+		   10%           100%; 
+	}
+
+	   }
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.img1{
+width:20px;
+height:70px; 
+
+
+}
+.img2{
+	width:20px;height: 70px; 
+	grid-column: 2;
+    grid-column-end: 4;
+object-fit: cover;
+
+
+}
+.img3{
+	width:20px;
+	height: 70px;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	grid-column-start: 4;
+	grid-column-end: 5;
+
+ }
+ .img4{
+ 	grid-column-start: 4;
+ 	grid-column-end: 3;
+ }
+}
+  
+	/***
+	cambios telefóno
+	****/
+	/*********************
+	se adecua al la composición de tablet y no cambia su diseño
+	*********************************************************/
+	@media (max-width: 425px){ 
+ 	.grid-container{ 
+		grid-template:
+		 "nav-area 	nav-area" 12rem
+		 "section-area	section-area" 50rem 
+		 "aside-area 	header-area " 12rem
+		 "header-area   aside-area" 20rem 
+	   	"footer-area 	footer-area" 1rem/
+		   50%           200%; 
+	}
+}
